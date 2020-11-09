@@ -21,7 +21,7 @@ public:
 	*
 	* \param const string filename
 	*/
-	explicit NoFileException(const std::string& fname) : FileName{ fname } {}
+	explicit NoFileException(const std::string fname) : FileName{ fname } {}
 
 	/**
 	* \brief Overrided function of NoFileException (std::exception)
@@ -50,7 +50,7 @@ class InvalidContentOfFileException : public std::exception
 
 public:
 
-	InvalidContentOfFileException(const std::string& fname, const std::string& name, int hp, int dmg, double as) :
+	InvalidContentOfFileException(const std::string fname, const std::string name, int hp, int dmg, double as) :
 		message("In file <" + fname + "> the following unit parameters are not present or unreadable:\n")
 	{
 		/**
@@ -101,7 +101,7 @@ class InterpretException : public std::exception
 {
 	std::string message; ///< Message that shown up upon error
 public:
-	InterpretException(const std::string& fname, const std::string& type) :
+	InterpretException(const std::string fname, const std::string type) :
 		message("In file <" + fname + "> the value associated with <" + type + "> parameter cannot be interpreted properly")
 
 		/**
@@ -134,7 +134,7 @@ class InputFormatException : public std::exception
 	std::string missing; ///< Character that is not present in input, though required by syntax
 
 public:
-	InputFormatException(const std::string& miss) : missing(miss)
+	InputFormatException(const std::string miss) : missing(miss)
 	{
 
 		/**
@@ -165,7 +165,7 @@ class FileFormatException : public std::exception
 	std::string message;///< Message that shown up upon error
 
 public:
-	FileFormatException(const std::string& fname, const std::string& missing):
+	FileFormatException(const std::string fname, const std::string missing):
 		message("In file <" + fname + "> the formatting is incorrect. A <" + missing + "> was missing")
 	{
 		/**
