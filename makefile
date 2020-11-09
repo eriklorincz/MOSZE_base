@@ -18,13 +18,13 @@ main.o: main.cpp JSON.h Monster.h Exceptions.h
 	$(CC) $(CFLAGS) -c main.cpp
 
 install-valgrind-and-cppcheck:
-	sudo apt-get install -y valgrind cppcheck
+	apt-get install -y valgrind cppcheck
 
 memoryleak-check:
 	valgrind --leak-check=full --error-exitcode=1 ./a.out units/scenario1.json
 
 upgrade-gcc:
-	sudo apt --only-upgrade install g++-10 gcc-10
+	apt --only-upgrade install g++-10 gcc-10
 
 build: $(OBJS)
 	$(CC) $(CFLAGS) -o a.out $(OBJS)
