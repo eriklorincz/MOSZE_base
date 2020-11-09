@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: mesmatyas/mosze_main:latest
+    container: kalmaradam/test:latest
     steps:
       - uses: actions/checkout@v2
       - name: Make build environment
