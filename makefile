@@ -39,6 +39,7 @@ io-diff-tests:
 	diff ./units/output1.txt Genoutput1.txt && diff ./units/output2.txt Genoutput2.txt
 
 run-test:
+	chmod +x ./test.sh
 	bash -c "./test.sh"
 
 unittest-build:
