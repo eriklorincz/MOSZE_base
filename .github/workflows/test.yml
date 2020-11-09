@@ -14,8 +14,6 @@ jobs:
         run: make static-code-analysis
       - name: Static code analysis report
         run: make static-code-analysis-report
-      - name: Update gcc
-        run: make upgrade-gcc
       - name: Build
         run: make build
       - name: Memoryleak check

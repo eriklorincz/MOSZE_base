@@ -1,7 +1,5 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8)
  
-set(CMAKE_C_COMPILER "gcc")
-set(CMAKE_CXX_COMPILER "/usr/bin/g++")
 
 project("Unittest")
 set(CMAKE_CXX_STANDARD 17)
