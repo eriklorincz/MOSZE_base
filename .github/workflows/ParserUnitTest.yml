@@ -7,8 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     container: kalmaradam/test:latest
     steps:
-      - name: GetPath
-        run: which g++-10 
       - name: Gtest
         run: cd /usr/src/gtest && cmake . && make && cp *.a /usr/lib && ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
         

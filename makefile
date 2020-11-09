@@ -43,7 +43,7 @@ run-test:
 	bash -c "./test.sh"
 
 unittest-build:
-	cd test && cmake -D CMAKE_C_COMPILER=gcc-10 -D CMAKE_CXX_COMPILER=g++-10 CMakeLists.txt && make
+	cd test && cmake -D CMAKE_C_COMPILER=/usr/bin/gcc-10 -D CMAKE_CXX_COMPILER=/usr/bin/g++-10 CMakeLists.txt && make
 
 unittest-run:
 	cd test &&./runTests
