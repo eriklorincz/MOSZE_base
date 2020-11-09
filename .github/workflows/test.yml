@@ -1,0 +1,31 @@
+name: Test workflow
+
+on: push
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    container: kalmaradam/test:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Valgrind and Cppcheck
+        run: make install-valgrind-and-cppcheck
+      - name: Static code analysis
+        run: make static-code-analysis
+      - name: Static code analysis report
+        run: make static-code-analysis-report
+      - name: Update gcc
+        run: make upgrade-gcc
+      - name: Build
+        run: make build
+      - name: Memoryleak check
+        run: make memoryleak-check
+      - name: Run Test
+        run: make run-test
+      - name: I-O diff test
+        run: make io-diff-tests
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v2
+        with:
+            name: checkreport
+            path: ./checkreport.txt

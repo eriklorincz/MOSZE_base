@@ -1,0 +1,6 @@
+{
+	"name" : "Rick",
+	"health_points" : 70,
+	"damage" : 30,
+	"attack_cooldown" : 2.0
+}
